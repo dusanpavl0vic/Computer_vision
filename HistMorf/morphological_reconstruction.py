@@ -24,6 +24,7 @@ if __name__ == '__main__':
     _, mask_circles = cv2.threshold(img_gray, 2, 255, cv2.THRESH_BINARY)
     mask_filtered = cv2.morphologyEx(mask_circles, cv2.MORPH_OPEN, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5)))
     plt.imshow(mask_filtered)
+    plt.title("mask_filtered")
     plt.show()
     img_blue = img[:, :, 2]
     _, blue_circles_lower = cv2.threshold(img_blue, 129, 255, cv2.THRESH_BINARY)
@@ -31,6 +32,9 @@ if __name__ == '__main__':
     blue_circles = cv2.bitwise_and(blue_circles_upper, blue_circles_lower)
     blue_circles_open = cv2.morphologyEx(blue_circles, cv2.MORPH_OPEN, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5)))
     marker = cv2.bitwise_and(blue_circles_open, mask_filtered)
+    plt.imshow(marker)
+    plt.title("marker")
+    plt.show()
     reconstructed = morphological_reconstruction(marker, mask_filtered)
     plt.imshow(reconstructed)
     plt.show()

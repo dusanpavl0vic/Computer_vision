@@ -11,7 +11,7 @@ if __name__ == '__main__':
     tbTh1 = cv2.createTrackbar("Th1", "Output", 100, 1500, nothing)
     tbTh2 = cv2.createTrackbar("Th2", "Output", 200, 1500, nothing)
 
-    imgIn = cv2.imread("170508_10_27_41_5DS29248.0.jpg")
+    imgIn = cv2.imread("buildings.jpg")
     imgGray = cv2.cvtColor(imgIn, cv2.COLOR_BGR2GRAY)
 
     while True:

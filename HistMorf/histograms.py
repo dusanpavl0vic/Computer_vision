@@ -14,7 +14,7 @@ def gamma_correction(image, gamma=1.0):
 
 
 if __name__ == '__main__':
-    img = cv2.imread("asdf.jfif")
+    img = cv2.imread("buildings.jpg")
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
     img = cv2.rotate(img, cv2.ROTATE_90_COUNTERCLOCKWISE)
