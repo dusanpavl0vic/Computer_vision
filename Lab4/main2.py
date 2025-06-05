@@ -21,11 +21,11 @@ for contour in contours:
 
 
 
-cv2.imshow("Input image", image)
-cv2.imshow("Crop image", cropped_image)
-cv2.imwrite("crop_input.png", cropped_image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+# cv2.imshow("Input image", image)
+# cv2.imshow("Crop image", cropped_image)
+# cv2.imwrite("crop_input.png", cropped_image)
+# cv2.waitKey(0)
+# cv2.destroyAllWindows()
 
 # ---------------------------------------
 
@@ -49,7 +49,7 @@ ap.add_argument("-l", "--labels", required=True, help="path to ImageNet labels (
 args = vars(ap.parse_args())
 
 # load the input image from disk
-image = cv2.imread(args["image"])
+image = cropped_image
 
 # Sliding Window
 def sliding_window(image, window_size, stride):
