@@ -1,0 +1,1 @@
+python3 main2.py -i crop_input.png -p bvlc_googlenet.prototxt -m bvlc_googlenet.caffemodel -l labels.txt  
